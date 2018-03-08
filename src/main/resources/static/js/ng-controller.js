@@ -11,6 +11,7 @@ angular.module('AppointmentTrackerApp', [])
                             function errorCallback(response) {
                                 console.log("Unable to get data");
                             });
+                            $scope.showTable=true;
                 };
         $scope.addAppointment = function() {
                     console.log("About to add the following appointment " + JSON.stringify($scope.newAppointment));
@@ -26,8 +27,10 @@ angular.module('AppointmentTrackerApp', [])
                             $scope.newAppointment={};
                             $scope.appointments={};
                             $scope.showme=false;
+                            $scope.showTable=false;
                 };
         $scope.newAppointment={};
         $scope.appointments={};
         $scope.search={};
+        $scope.showTable=false;
         });
