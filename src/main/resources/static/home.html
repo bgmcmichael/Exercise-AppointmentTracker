@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AppointmentTrackerApp">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="../static/js/ng-controller.js"></script>
+<script src="js/ng-controller.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+</head>
+<body ng-controller="ng-controller">
+<div>
+    <br>
+        <button ng-click="showme=true" ng-hide="showme">New</button>
+    <div ng-show="showme">
+        <input type="button" ng-click="addAppointment()" value="Add"/><button ng-click="showme=false" ng-show="showme">Cancel</button>
+        </br></br>
+            Date: <input type="text" ng-model="newAppointment.appDate"></br>
+            Time: <input type="text" ng-model="newAppointment.appTime"></br>
+            Description: <input type="text" ng-model="newAppointment.description">
+    </div>
+</div>
+
+</br></br>
+<input type="text" ng-model="search.searchText"><input type="button" ng-click="getAppointments()" value="Search"/>
+</br></br>
+<table>
+    <tr ng-repeat="appointment in appointments">
+        <td>{{appointment.appDate}}</td>
+        <td>{{appointment.appTime}}</td>
+        <td>{{appointment.description}}</td>
+    </tr>
+</table>
+</body>
+</html>
